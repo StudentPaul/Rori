@@ -1,3 +1,19 @@
-<h1>
-  {{title}}
-</h1>
+<nav>
+  <button  color="grey" class="menu-btn left" id="nav-btn" md-button (click)="sidenav.toggle()"><md-icon>menu</md-icon></button>
+  <button class="menu-btn right" color="accent" md-raised-button>Увійти</button>
+  <button class="menu-btn right" color="accent" md-raised-button>Зареєструватися</button>
+</nav>
+<md-sidenav-container>
+  <md-sidenav mode="side" #sidenav>
+    <a class="sidenav-item" md-button>Розклад</a>
+    <a class="sidenav-item" md-button>Новини</a>
+    <a class="sidenav-item" md-button>Розклад</a>
+
+  </md-sidenav>
+
+  <div id="content">
+    <md-card>Sed commodo consectetur interdum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse vitae bibendum ex. Aliquam nisl nibh, dictum ac ultrices id, euismod quis velit. Nunc hendrerit lacus id justo ornare, nec rhoncus libero elementum. Aenean et euismod mauris, eget vehicula erat. Sed sagittis nec massa et lobortis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent eget augue sapien. Sed lobortis tellus id tincidunt placerat. Donec aliquam consectetur consequat. Suspendisse tempor lacus sed lectus auctor vulputate. Donec blandit in neque sed suscipit. Praesent facilisis fringilla lobortis.</md-card>
+    <md-card>Simple card</md-card>
+    <md-card>Sed orci ante, ornare a justo luctus, rhoncus aliquam tellus. Pellentesque ultricies mattis tristique. Aliquam eget libero ante. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam tempus lobortis lectus.</md-card>
+  </div>
+</md-sidenav-container>
