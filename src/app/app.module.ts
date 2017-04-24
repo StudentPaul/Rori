@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { AppComponent } from './app.component';
 import { TimetableComponent } from './timetable/timetable.component';
 import { NewsComponent } from './news/news.component';
+import { CalendarModule } from 'angular-calendar';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { NewsComponent } from './news/news.component';
     BrowserAnimationsModule,
     MaterialModule.forRoot(),
     MdIconModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CalendarModule.forRoot()
   ],
   exports: [
   ],

@@ -12,4 +12,8 @@ export class TimetableComponent implements OnInit {
   ngOnInit() {
   }
 
+  todayDate(): Date {
+    return new Date();
+  }
+
 }
