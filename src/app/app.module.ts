@@ -6,12 +6,16 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MaterialModule} from '@angular/material';
 import {MdIconModule} from '@angular/material';
 
-
+import { AppRoutingModule } from './app-routing/app-routing.module';
 import { AppComponent } from './app.component';
+import { TimetableComponent } from './timetable/timetable.component';
+import { NewsComponent } from './news/news.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TimetableComponent,
+    NewsComponent
   ],
   imports: [
     BrowserModule,
@@ -19,7 +23,8 @@ import { AppComponent } from './app.component';
     HttpModule,
     BrowserAnimationsModule,
     MaterialModule.forRoot(),
-    MdIconModule
+    MdIconModule,
+    AppRoutingModule
   ],
   exports: [
   ],
