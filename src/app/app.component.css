@@ -53,4 +53,8 @@ md-sidenav {
 .sidenav-item {
   display: block;
   margin: 0px;
+  border-bottom: solid 1px #bfbfbf
+}
+.menu-btn {
+  ;
 }

@@ -11,12 +11,14 @@ import { AppComponent } from './app.component';
 import { TimetableComponent } from './timetable/timetable.component';
 import { NewsComponent } from './news/news.component';
 import { CalendarModule } from 'angular-calendar';
+import { SettingsComponent } from './settings/settings.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TimetableComponent,
-    NewsComponent
+    NewsComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,

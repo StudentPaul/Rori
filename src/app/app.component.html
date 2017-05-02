@@ -1,13 +1,25 @@
-<nav>
+<nav color="accent">
   <button  color="grey" class="menu-btn left" id="nav-btn" md-button (click)="sidenav.toggle()"><md-icon>menu</md-icon></button>
-  <button class="menu-btn right" color="accent" md-raised-button>Увійти</button>
-  <button class="menu-btn right" color="accent" md-raised-button>Зареєструватися</button>
+  <button class="menu-btn right" color="accent" md-raised-button (click)="openLoginDialog()">Увійти</button>
+  <button class="menu-btn right" color="accent" md-raised-button (click)="openRegisterDialog()">Зареєструватися</button>
 </nav>
 <md-sidenav-container>
-  <md-sidenav mode="side" #sidenav>
-    <a routerLink="/timetable" routerLinkActive="active" class="sidenav-item" md-button>Розклад</a>
-    <a routerLink="/news" routerLinkActive="active" class="sidenav-item" md-button>Новини</a>
-    <a class="sidenav-item" md-button>Якась неробоча кнопка</a>
+  <md-sidenav mode="over" #sidenav>
+    <a routerLink="/timetable"
+       routerLinkActive="active"
+       class="sidenav-item"
+       md-button
+       (click)="sidenav.close()">Розклад</a>
+    <a routerLink="/news"
+       routerLinkActive="active"
+       class="sidenav-item"
+       md-button
+       (click)="sidenav.close()">Новини</a>
+    <a routerLink="/settings"
+       routerLinkActive="active"
+       class="sidenav-item"
+       md-button
+       (click)="sidenav.close()">Налаштування</a>
 
   </md-sidenav>
 
