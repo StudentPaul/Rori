@@ -9,20 +9,14 @@ import {MdDialog, MdDialogRef} from '@angular/material';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
+  selectedOption: string;
   constructor(public dialog: MdDialog)  {
 
   }
-  openRegisterDialog() {
-    let dialogRef = this.dialog.open(DialogRegister);
-    dialogRef.afterClosed().subscribe(result => {
-      //this.selectedOption = result;
-    });
-  }
   openLoginDialog(){
-    let dialogRef = this.dialog.open(DialogResultExampleDialog);
+    let dialogRef = this.dialog.open(DialogLogin);
     dialogRef.afterClosed().subscribe(result => {
-      //this.selectedOption = result;
+      this.selectedOption = result;
     });
 
   }
@@ -31,15 +25,8 @@ export class AppComponent {
 
 @Component({
   selector: 'dialog-result-example-dialog',
-  templateUrl: './dialog-result-example-dialog.html',
+  templateUrl: 'dialog-login.html',
 })
-export class DialogResultExampleDialog {
-  constructor(public dialogRef: MdDialogRef<DialogResultExampleDialog>) {}
-}
-@Component({
-  selector: 'dialog-register',
-  templateUrl: './dialog-register.html',
-})
-export class DialogRegister {
-  constructor(public dialogRef: MdDialogRef<DialogRegister>) {}
+export class DialogLogin {
+  constructor(public dialogRef: MdDialogRef<DialogLogin>) {}
 }

@@ -7,7 +7,7 @@ import {MaterialModule} from '@angular/material';
 import {MdIconModule} from '@angular/material';
 
 import { AppRoutingModule } from './app-routing/app-routing.module';
-import { AppComponent } from './app.component';
+import { AppComponent, DialogLogin } from './app.component';
 import { TimetableComponent } from './timetable/timetable.component';
 import { NewsComponent } from './news/news.component';
 import { CalendarModule } from 'angular-calendar';
@@ -18,7 +18,8 @@ import { SettingsComponent } from './settings/settings.component';
     AppComponent,
     TimetableComponent,
     NewsComponent,
-    SettingsComponent
+    SettingsComponent,
+    DialogLogin
   ],
   imports: [
     BrowserModule,
@@ -33,6 +34,6 @@ import { SettingsComponent } from './settings/settings.component';
   exports: [
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent,DialogLogin]
 })
 export class AppModule { }
