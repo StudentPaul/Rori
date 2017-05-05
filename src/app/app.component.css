@@ -55,7 +55,6 @@ flex: 1 1 auto;
 }
 .right {
   float: right;
-  margin-right: 10px;
 }
 .sidenav-item {
   display: block;
@@ -64,11 +63,11 @@ flex: 1 1 auto;
 }
 .menu-btn {
 }
-#nav-btn{
+.menu-btn{
   height: 64px;
 }
 @media (max-width: 600px){
-  #nav-btn{
+  .menu-btn{
     height: 56px;
   }
   md-sidenav-container {

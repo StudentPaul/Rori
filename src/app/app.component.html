@@ -1,12 +1,12 @@
 <md-toolbar color="primary">
-  <span><button  color="grey" class="menu-btn left" id="nav-btn" md-button (click)="sidenav.toggle()"><md-icon>menu</md-icon></button></span>
+  <span><button   class="menu-btn left" id="nav-btn" md-button (click)="sidenav.toggle()"><md-icon>menu</md-icon></button></span>
 
   <!-- This fills the remaining space of the current row -->
   <span class="example-fill-remaining-space"></span>
 
-  <span><button *ngIf="!loggedIn" class="menu-btn right" color="accent" md-raised-button (click)="openLoginDialog()">Увійти</button>
-    <button *ngIf="loggedIn" class="menu-btn right" color="primary" md-button (click)="logout()">Вийти</button>
-    <i  *ngIf="role" (click)="updateRole()">{{role}}</i></span>
+  <span><button *ngIf="!loggedIn" class="menu-btn right"  md-button (click)="openLoginDialog()"><md-icon>input</md-icon>Увійти</button>
+    <button *ngIf="loggedIn" class="menu-btn right"  md-button (click)="logout()"><md-icon>close</md-icon>Вийти</button>
+    <button md-button class="right menu-btn"  *ngIf="role" (click)="updateRole()"><md-icon>face</md-icon>{{role}}</button></span>
 </md-toolbar>
 
 
@@ -16,7 +16,7 @@
        routerLinkActive="active"
        class="sidenav-item"
        md-button
-       (click)="sidenav.close()">Розклад</a>
+       (click)="sidenav.close()"><md-icon>view week</md-icon>Розклад</a>
     <a routerLink="/news"
        routerLinkActive="active"
        class="sidenav-item"
