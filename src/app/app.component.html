@@ -1,9 +1,15 @@
-<nav color="accent">
-  <button  color="grey" class="menu-btn left" id="nav-btn" md-button (click)="sidenav.toggle()"><md-icon>menu</md-icon></button>
-  <button *ngIf="!loggedIn" class="menu-btn right" color="accent" md-raised-button (click)="openLoginDialog()">Увійти</button>
-  <button *ngIf="loggedIn" class="menu-btn right" color="primary" md-button (click)="logout()">Вийти</button>
-  <i  *ngIf="role" (click)="updateRole()">{{role}}</i>
-</nav>
+<md-toolbar color="primary">
+  <span><button  color="grey" class="menu-btn left" id="nav-btn" md-button (click)="sidenav.toggle()"><md-icon>menu</md-icon></button></span>
+
+  <!-- This fills the remaining space of the current row -->
+  <span class="example-fill-remaining-space"></span>
+
+  <span><button *ngIf="!loggedIn" class="menu-btn right" color="accent" md-raised-button (click)="openLoginDialog()">Увійти</button>
+    <button *ngIf="loggedIn" class="menu-btn right" color="primary" md-button (click)="logout()">Вийти</button>
+    <i  *ngIf="role" (click)="updateRole()">{{role}}</i></span>
+</md-toolbar>
+
+
 <md-sidenav-container>
   <md-sidenav mode="over" #sidenav>
     <a routerLink="/timetable"
