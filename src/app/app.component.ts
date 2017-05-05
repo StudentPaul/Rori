@@ -15,7 +15,7 @@ import {LoginHttpService} from './server-provider/login-http.service'
 export class AppComponent implements OnInit{
   selectedOption: string;
   loggedIn: boolean;
-  role: string;
+  role: string='';
   constructor(public dialog: MdDialog, private loginService: LoginService)  {
 
   }
@@ -23,13 +23,14 @@ export class AppComponent implements OnInit{
     this.loggedIn = false;
     this.role = localStorage.getItem('role');
   }
-  getRole() {
+  updateRole() {
     this.role = localStorage.getItem('role');
-    return this.role||'Logged out';
+    alert('updated to '+this.role);
   }
   logout(){
     this.loginService.logout().subscribe(
-      data=>{alert('logged out')},
+      data=>{this.loggedIn=false;
+        alert('logged out')},
       err=>{alert('ERROR during logging out')}
     );
   }

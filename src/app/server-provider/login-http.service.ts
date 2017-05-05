@@ -17,8 +17,10 @@ export class LoginHttpService {
       .map(response => response.json());
   }
   logout(): Observable<any>{
+    let headers = new Headers({ 'Content-Type': 'text/plain', 'Authorization': localStorage.getItem('Authorization') });
+    let options = new RequestOptions({ headers: headers });
     return this.http
-      .post('http://pinkieshy.apphb.com/api/Account/Logout','')
+      .post('http://pinkieshy.apphb.com/api/Account/Logout','',options)
   }
 
 }

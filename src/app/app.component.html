@@ -2,7 +2,7 @@
   <button  color="grey" class="menu-btn left" id="nav-btn" md-button (click)="sidenav.toggle()"><md-icon>menu</md-icon></button>
   <button *ngIf="!loggedIn" class="menu-btn right" color="accent" md-raised-button (click)="openLoginDialog()">Увійти</button>
   <button *ngIf="loggedIn" class="menu-btn right" color="primary" md-button (click)="logout()">Вийти</button>
-  <i *ngIf="role">{{getRole()}}</i>
+  <i  *ngIf="role" (click)="updateRole()">{{role}}</i>
 </nav>
 <md-sidenav-container>
   <md-sidenav mode="over" #sidenav>

@@ -10,7 +10,7 @@ export class LoginService {
   login (email: string, password: string) {
     return this.loginHttp.getToken(email,password).map(
       data =>{
-        document.cookie = "Authorization=Bearer " + data.access_token;
+        localStorage.setItem("Authorization", "Bearer "+data.access_token);
         localStorage.setItem("role", data.Roles);
         return data},
       error => {
