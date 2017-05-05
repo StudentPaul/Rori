@@ -1,11 +1,20 @@
 <h1 md-dialog-title align="center">Параметри входу:</h1>
+
 <div md-dialog-content align="center">
+  <div>
+    <md-chip-list *ngIf="message"><md-chip color="primary" selected="true">{{message}}</md-chip></md-chip-list>
+
+  <md-spinner *ngIf="waiting"></md-spinner>
   <md-input-container >
-    <input mdInput type="email" placeholder="Ел. адреса" value="">
+    <input mdInput type="email" placeholder="Ел. адреса" [(ngModel)]="email">
   </md-input-container>
+</div>
+<div>
   <md-input-container>
-    <input mdInput type="password" placeholder="Пароль" value="">
+    <input mdInput type="password" placeholder="Пароль" [(ngModel)]="password">
   </md-input-container></div>
+</div>
 <div md-dialog-actions align="center">
-  <button md-raised-button color="accent"  (click)="dialogRef.close('Option 2')">Увійти</button>
+  <button md-raised-button color="accent"  (click)="login()">Увійти</button>
+  <button md-raised-button color="accent"  (click)="dialogRef.close('manual')">Закрити</button>
 </div>
