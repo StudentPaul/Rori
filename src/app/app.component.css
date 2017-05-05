@@ -66,6 +66,13 @@ flex: 1 1 auto;
 .menu-btn{
   height: 64px;
 }
+md-icon {
+  font-size: inherit;
+  width: auto;
+  height: auto;
+  position: relative;
+  margin-right: 5px;
+}
 @media (max-width: 600px){
   .menu-btn{
     height: 56px;
