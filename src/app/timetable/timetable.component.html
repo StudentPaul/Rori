@@ -1,23 +1,182 @@
 <p>
-  <md-card><mwl-calendar-month-view
-    [viewDate]=" todayDate()"
-    [events]="events"
-    locale="uk"
-    weekStartsOn="1">
-  </mwl-calendar-month-view></md-card>
+  <md-card>
+    <ng-template #modalContent let-close="close">
+      <div class="modal-header">
+        <h5 class="modal-title">Event action occurred</h5>
+        <button type="button" class="close" (click)="close()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div>
+          Action:
+          <pre>{{ modalData?.action }}</pre>
+        </div>
+        <div>
+          Event:
+          <pre>{{ modalData?.event | json }}</pre>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="close()">OK</button>
+      </div>
+    </ng-template>
 
-  <md-card><mwl-calendar-week-view
-    [viewDate]=" todayDate()"
-    [events]="events"
-    locale="uk"
-    weekStartsOn="1">
-  </mwl-calendar-week-view></md-card>
-  <md-card><mwl-calendar-day-view
-    [viewDate]=" todayDate()"
-    [events]="events"
-    [dayStartHour]="8"
-    dayStartMinute="30"
-    locale="uk">
-  </mwl-calendar-day-view></md-card>
+    <div class="row text-center">
+      <div class="col-md-4">
+        <div class="btn-group">
+          <div
+            class="btn btn-primary"
+            mwlCalendarPreviousView
+            [view]="view"
+            [(viewDate)]="viewDate">
+            Назад
+          </div>
+          <div
+            class="btn btn-secondary"
+            mwlCalendarToday
+            [(viewDate)]="viewDate">
+            Сьогодні
+          </div>
+          <div
+            class="btn btn-primary"
+            mwlCalendarNextView
+            [view]="view"
+            [(viewDate)]="viewDate">
+            Вперед
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'uk' }}</h3>
+      </div>
+      <div class="col-md-4">
+        <div class="btn-group">
+          <div
+            class="btn btn-primary"
+            (click)="view = 'month'"
+            [class.active]="view === 'month'">
+            Місяць
+          </div>
+          <div
+            class="btn btn-primary"
+            (click)="view = 'week'"
+            [class.active]="view === 'week'">
+            Тиждень
+          </div>
+          <div
+            class="btn btn-primary"
+            (click)="view = 'day'"
+            [class.active]="view === 'day'">
+            День
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div [ngSwitch]="view">
+      <mwl-calendar-month-view
+        *ngSwitchCase="'month'"
+        locale="uk"
+        [viewDate]="viewDate"
+        [events]="events"
+        [refresh]="refresh"
+        [activeDayIsOpen]="activeDayIsOpen"
+        (dayClicked)="dayClicked($event.day)"
+        (eventClicked)="handleEvent('Clicked', $event.event)"
+        (eventTimesChanged)="eventTimesChanged($event)">
+      </mwl-calendar-month-view>
+      <mwl-calendar-week-view
+        *ngSwitchCase="'week'"
+        locale="uk"
+        [viewDate]="viewDate"
+        [events]="events"
+        [refresh]="refresh"
+        (eventClicked)="handleEvent('Clicked', $event.event)"
+        (eventTimesChanged)="eventTimesChanged($event)">
+      </mwl-calendar-week-view>
+      <mwl-calendar-day-view
+        *ngSwitchCase="'day'"
+        locale="uk"
+        [viewDate]="viewDate"
+        [events]="events"
+        [refresh]="refresh"
+        (eventClicked)="handleEvent('Clicked', $event.event)"
+        (eventTimesChanged)="eventTimesChanged($event)">
+      </mwl-calendar-day-view>
+    </div>
+
+    <br><br><br>
+
+    <h3>
+      Редагувати події
+      <button
+        class="btn btn-primary pull-right"
+        (click)="addEvent()">
+        Додати нову
+      </button>
+      <div class="clearfix"></div>
+    </h3>
+
+    <table class="table table-bordered">
+
+      <thead>
+      <tr>
+        <th>Заголовок</th>
+        <th>Колір первинний</th>
+        <th>Колір вторинний</th>
+        <th>Початок</th>
+        <th>Кінець</th>
+        <th>Знищити</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <tr *ngFor="let event of events; let index = index">
+        <td>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="event.title"
+            (keyup)="refresh.next()">
+        </td>
+        <td>
+          <input
+            type="color"
+            [(ngModel)]="event.color.primary"
+            (change)="refresh.next()">
+        </td>
+        <td>
+          <input
+            type="color"
+            [(ngModel)]="event.color.secondary"
+            (change)="refresh.next()">
+        </td>
+        <td>
+          <mwl-demo-utils-date-time-picker
+            [(date)]="event.start"
+            (dateChange)="refresh.next()"
+            placeholder="Not set">
+          </mwl-demo-utils-date-time-picker>
+        </td>
+        <td>
+          <mwl-demo-utils-date-time-picker
+            [(date)]="event.end"
+            (dateChange)="refresh.next()"
+            placeholder="Not set">
+          </mwl-demo-utils-date-time-picker>
+        </td>
+        <td>
+          <button
+            class="btn btn-danger"
+            (click)="events.splice(index, 1); refresh.next()">
+            Delete
+          </button>
+        </td>
+      </tr>
+      </tbody>
+
+    </table>
+  </md-card>
 
 </p>
