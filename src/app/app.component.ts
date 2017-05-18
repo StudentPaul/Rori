@@ -37,8 +37,10 @@ export class AppComponent implements OnInit{
   openLoginDialog(){
     let dialogRef = this.dialog.open(DialogLogin);
     dialogRef.afterClosed().subscribe(result => {
-      if(result === 'success')
-      this.loggedIn = true;
+      if(result === 'success'){
+        this.loggedIn = true;
+        this.updateRole();
+      }
     });
 
   }
