@@ -1,3 +1,13 @@
-div {
-  border: 1px solid black;
+:host {
+  display: block;
+  border-bottom: 1px solid grey;
+  padding: 5px;
+}
+i {
+  display: inline-block;
+  border-radius: 10px;
+  padding: 5px;
+
+
+
 }

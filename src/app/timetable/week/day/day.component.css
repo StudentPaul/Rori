@@ -1,0 +1,6 @@
+:host {
+  width: 300px;
+  display: inline-block;
+  height: 500px;
+  overflow: scroll;
+}

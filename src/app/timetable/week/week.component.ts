@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Day } from './day/day';
+import { Day } from '../timetable.classes';
 
 @Component({
   selector: 'timetable-week',

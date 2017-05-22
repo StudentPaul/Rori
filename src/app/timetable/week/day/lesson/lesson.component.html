@@ -1,5 +1,9 @@
+<div><b>{{name}}({{type}})</b></div>
+
+
 <div>
-  <p>lesson info and type:</p>
-  <p>{{lesson.info}}</p>
-  <p>{{lesson.type}}</p>
+  {{teacher.shortName}}
+</div>
+<div>
+  <i *ngFor="let inf of info" [style.background-color]="inf.color">{{inf.content}}</i>
 </div>

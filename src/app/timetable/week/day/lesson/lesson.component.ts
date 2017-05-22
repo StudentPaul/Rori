@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {Info} from './lessonInfo'
-import {Teacher} from "./teacher";
+import {Info, Teacher} from '../../../timetable.classes';
 
 @Component({
   selector: 'timetable-lesson',
@@ -14,6 +13,8 @@ export class LessonComponent implements OnInit {
   @Input() number: number;
   @Input() info: Info[];
   @Input() teacher: Teacher;
+  @Input() name: string;
+
 
   constructor() {
   }

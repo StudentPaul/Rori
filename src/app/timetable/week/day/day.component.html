@@ -1,9 +1,13 @@
-<md-card>
+<div><md-card>
+  <h3>{{name}}</h3>
   <timetable-lesson *ngFor="let lesson of lessons"
                     [id]="lesson.id"
                     [type]="lesson.type"
                     [number]="lesson.number"
                     [info]="lesson.info"
+                    [name]="lesson.name"
                     [teacher]="lesson.teacher"
+  >
   </timetable-lesson>
-</md-card>
+</md-card></div>
+

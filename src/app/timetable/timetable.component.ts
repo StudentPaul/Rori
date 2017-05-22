@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Week} from "./timetable.classes";
+import {Week, json} from "./timetable.classes";
+
 
 @Component({
   selector: 'app-timetable',
@@ -10,11 +11,18 @@ export class TimetableComponent implements OnInit {
 
   firstWeek: Week;
   secondWeek: Week;
-  constructor() {
+  currentWeek: number;
+  currentDay: string;
 
+  constructor() {
+    this.firstWeek = new Week().deserialize(json.weeks[0]);
+    this.secondWeek = new Week().deserialize(json.weeks[1]);
+    this.currentDay = json.day;
+    this.currentWeek = json.week;
   }
 
   ngOnInit() {
+
   }
 
 }
