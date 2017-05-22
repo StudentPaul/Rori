@@ -1,0 +1,9 @@
+<md-card>
+  <timetable-lesson *ngFor="let lesson of lessons"
+                    [id]="lesson.id"
+                    [type]="lesson.type"
+                    [number]="lesson.number"
+                    [info]="lesson.info"
+                    [teacher]="lesson.teacher"
+  </timetable-lesson>
+</md-card>
