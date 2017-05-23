@@ -1,6 +1,10 @@
 :host {
-  width: 300px;
-  display: inline-block;
-  height: 500px;
-  overflow: scroll;
+
+}
+.day-view {
+  width: 350px;
+  display: inline-table;
+}
+md-card-title {
+  text-align: center;
 }

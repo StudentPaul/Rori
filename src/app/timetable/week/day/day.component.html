@@ -1,5 +1,7 @@
-<div><md-card>
-  <h3>{{name}}</h3>
+
+<div class="day-view"><md-card>
+  <md-card-title>{{name}}</md-card-title>
+  <md-list>
   <timetable-lesson *ngFor="let lesson of lessons"
                     [id]="lesson.id"
                     [type]="lesson.type"
@@ -9,5 +11,6 @@
                     [teacher]="lesson.teacher"
   >
   </timetable-lesson>
+    </md-list>
 </md-card></div>
 

@@ -1,9 +1,9 @@
-<div><b>{{name}}({{type}})</b></div>
+<md-list-item>
+  <md-icon md-list-icon>folder</md-icon>
+  <h4 md-line><b>{{name}}</b></h4>
+  <p class="lesson-type">{{type}}</p>
+  <p md-line class="teacher-name">{{teacher.shortName}}</p>
 
-
-<div>
-  {{teacher.shortName}}
-</div>
-<div>
-  <i *ngFor="let inf of info" [style.background-color]="inf.color">{{inf.content}}</i>
-</div>
+  <!--<p *ngFor="let inf of info" [style.background-color]="inf.color">{{inf.content}}</p>-->
+</md-list-item>
+<md-divider></md-divider>

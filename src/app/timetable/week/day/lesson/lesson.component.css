@@ -1,7 +1,7 @@
 :host {
   display: block;
-  border-bottom: 1px solid grey;
   padding: 5px;
+  width: 350px;
 }
 i {
   display: inline-block;
@@ -10,4 +10,13 @@ i {
 
 
 
+}
+.mat-list-icon {
+  color: rgba(0,0,0,0.54);
+}
+.teacher-name {
+  color: royalblue;
+}
+.lesson-type {
+  font-style: italic;
 }
