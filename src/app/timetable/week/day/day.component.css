@@ -1,10 +1,11 @@
 :host {
-
+padding: 0px;
 }
 .day-view {
-  width: 350px;
-  display: inline-table;
+height: 100%;
+
 }
 md-card-title {
   text-align: center;
 }
+md-card {  height: 100%}

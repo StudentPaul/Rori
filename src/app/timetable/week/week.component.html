@@ -1,6 +1,6 @@
-<p>
-  <timetable-day *ngFor="let day of days"
+<div class="row">
+  <timetable-day class=" col-md-4 col-sm-6 day" *ngFor="let day of days"
                  [lessons]="day.lessons"
                  [name]="day.name">
   </timetable-day>
-</p>
+</div>

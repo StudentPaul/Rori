@@ -12,16 +12,16 @@
 
 <md-sidenav-container>
   <md-sidenav mode="over" #sidenav>
-    <a routerLink="/calendar"
-       routerLinkActive="active"
-       class="sidenav-item"
-       md-button
-       (click)="sidenav.close()"><md-icon>face</md-icon>Календар</a>
     <a routerLink="/timetable"
        routerLinkActive="active"
        class="sidenav-item"
        md-button
-       (click)="sidenav.close()"><md-icon>input</md-icon>Розклад</a>
+       (click)="sidenav.close()"><md-icon>schedule</md-icon>Розклад</a>
+    <a routerLink="/calendar"
+       routerLinkActive="active"
+       class="sidenav-item"
+       md-button
+       (click)="sidenav.close()"><md-icon>event</md-icon>Календар</a>
     <a routerLink="/news"
        routerLinkActive="active"
        class="sidenav-item"

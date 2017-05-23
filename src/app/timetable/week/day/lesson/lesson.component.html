@@ -1,5 +1,11 @@
-<md-list-item>
-  <md-icon md-list-icon>folder</md-icon>
+<md-list-item [ngSwitch]="number">
+    <md-icon md-list-icon *ngSwitchCase="1">looks_one</md-icon>
+    <md-icon md-list-icon *ngSwitchCase="2">looks_two</md-icon>
+    <md-icon md-list-icon *ngSwitchCase="3">looks_3</md-icon>
+    <md-icon md-list-icon *ngSwitchCase="4">looks_4</md-icon>
+    <md-icon md-list-icon *ngSwitchCase="5">looks_5</md-icon>
+    <md-icon md-list-icon *ngSwitchCase="6">looks_6</md-icon>
+    <md-icon md-list-icon *ngSwitchDefault>looks</md-icon>
   <h4 md-line><b>{{name}}</b></h4>
   <p class="lesson-type">{{type}}</p>
   <p md-line class="teacher-name">{{teacher.shortName}}</p>

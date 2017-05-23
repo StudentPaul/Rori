@@ -1,5 +1,5 @@
 <p>
-    <md-tab-group>
+    <md-tab-group *ngIf ="firstWeek">
       <md-tab label="Тиждень 1">
         <timetable-week [days]="firstWeek.days"
                         [number]="firstWeek.number">
