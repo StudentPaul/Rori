@@ -2,12 +2,14 @@
     <md-tab-group *ngIf ="firstWeek">
       <md-tab label="Тиждень 1">
         <timetable-week [days]="firstWeek.days"
-                        [number]="firstWeek.number">
+                        [number]="firstWeek.number"
+                        (infoRequested)="openInfoDialog($event)">
         </timetable-week>
       </md-tab>
       <md-tab label="Тиждень 2">
         <timetable-week [days]="secondWeek.days"
-                        [number]="secondWeek.number">
+                        [number]="secondWeek.number"
+                        (infoRequested)="openInfoDialog($event)">
         </timetable-week>
       </md-tab>
     </md-tab-group>

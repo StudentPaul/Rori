@@ -16,6 +16,7 @@ import {
   CalendarEventAction,
   CalendarEventTimesChangedEvent
 } from 'angular-calendar';
+import {CalendarHttpService} from '../server-provider/calendar-http.service';
 
 const colors: any = {
   red: {
@@ -35,12 +36,32 @@ const colors: any = {
   selector: 'app-calendar',
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './calendar.component.html',
-  styleUrls: ['./calendar.component.css']
+  styleUrls: ['./calendar.component.css'],
+  providers: [CalendarHttpService]
 })
-export class CalendarComponent  {
+export class CalendarComponent implements OnInit{
   @ViewChild('modalContent') modalContent: TemplateRef<any>;
 
+  fetchCalendar () {
+    return this.calendarHttp.getCurrent().subscribe(
+      data =>{
+        let obj = JSON.parse(data._body) ;
+        obj.map( (item)=> {
+          this.events.push({color: {primary:item.color, secondary: item.color}, start: new Date(item.date), title: item.content});
+          this.refresh.next()
+        });
+        this.waiting = false;
+
+        return obj
+      },
+      error => {
+
+        alert('error while fetching info for calendar');
+        return error;
+      });
+  }
   view: string = 'month';
+  waiting: boolean = true;
 
   viewDate: Date = new Date();
 
@@ -64,7 +85,8 @@ export class CalendarComponent  {
 
   refresh: Subject<any> = new Subject();
 
-  events: CalendarEvent[] = [{
+  events: CalendarEvent[] = [];
+  events1: CalendarEvent[] = [{
     start: subDays(startOfDay(new Date()), 1),
     end: addDays(new Date(), 1),
     title: 'A 3 day event',
@@ -95,7 +117,7 @@ export class CalendarComponent  {
 
   activeDayIsOpen: boolean = true;
 
-  constructor(private modal: NgbModal) {}
+  constructor(private modal: NgbModal, private calendarHttp: CalendarHttpService) {}
 
   dayClicked({date, events}: {date: Date, events: CalendarEvent[]}): void {
 
@@ -141,8 +163,8 @@ export class CalendarComponent  {
   todayDate(): Date {
     return new Date();
   }
-  OnInit(){
-
+  ngOnInit(){
+this.fetchCalendar();
   }
 
 

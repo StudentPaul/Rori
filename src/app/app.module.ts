@@ -10,7 +10,7 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { AppComponent, DialogLogin } from './app.component';
 import { CalendarComponent } from './calendar/calendar.component';
-import { TimetableComponent } from './timetable/timetable.component';
+import {DialogInfo, TimetableComponent} from './timetable/timetable.component';
 import { NewsComponent } from './news/news.component';
 import { CalendarModule } from 'angular-calendar';
 import { SettingsComponent } from './settings/settings.component';
@@ -18,6 +18,7 @@ import {DemoUtilsModule} from './demo-utils/module';
 import { WeekComponent } from './timetable/week/week.component';
 import { DayComponent } from './timetable/week/day/day.component';
 import { LessonComponent } from './timetable/week/day/lesson/lesson.component';
+import { ProgressComponent } from './progress/progress.component';
 
 @NgModule({
   declarations: [
@@ -27,9 +28,11 @@ import { LessonComponent } from './timetable/week/day/lesson/lesson.component';
     NewsComponent,
     SettingsComponent,
     DialogLogin,
+    DialogInfo,
     WeekComponent,
     DayComponent,
-    LessonComponent
+    LessonComponent,
+    ProgressComponent
   ],
   imports: [
     BrowserModule,
@@ -46,6 +49,6 @@ import { LessonComponent } from './timetable/week/day/lesson/lesson.component';
   exports: [
   ],
   providers: [],
-  bootstrap: [AppComponent,DialogLogin]
+  bootstrap: [AppComponent,DialogLogin, DialogInfo]
 })
 export class AppModule { }

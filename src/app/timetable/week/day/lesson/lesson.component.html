@@ -9,7 +9,8 @@
   <h4 md-line><b>{{name}}</b></h4>
   <p class="lesson-type">{{type}}</p>
   <p md-line class="teacher-name">{{teacher.shortName}}</p>
-
+  <button md-line md-button color="secondary" class="right menu-btn"
+          (click)="showInfo(info)">Інфо<md-icon *ngFor="let inf of info" [ngStyle]="{'color': inf.color}" >info</md-icon></button>
   <!--<p *ngFor="let inf of info" [style.background-color]="inf.color">{{inf.content}}</p>-->
 </md-list-item>
 <md-divider></md-divider>

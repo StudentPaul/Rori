@@ -1,0 +1,11 @@
+ul {
+  list-style-type: none;
+}
+ul>li {
+  display: inline-block;
+  margin: 5px;
+  background-color: darkgrey;
+  padding: 5px;
+  border-radius: 5px;
+}
+

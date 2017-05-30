@@ -1,6 +1,7 @@
 <div class="row">
   <timetable-day class=" col-md-4 col-sm-6 day" *ngFor="let day of days"
                  [lessons]="day.lessons"
-                 [name]="day.name">
+                 [name]="day.name"
+  (infoRequested)="showInfo($event)">
   </timetable-day>
 </div>

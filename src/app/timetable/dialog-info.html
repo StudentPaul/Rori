@@ -1,0 +1,8 @@
+<h1 md-dialog-title align="center">Інфо</h1>
+
+<div *ngFor="let inf of info" class="info" [ngStyle]="{'border-left-color': inf.color}">
+  {{inf.content}}
+</div>
+<div md-dialog-actions align="center">
+  <button md-raised-button color="accent"  (click)="dialogRef.close('manual')">Закрити</button>
+</div>

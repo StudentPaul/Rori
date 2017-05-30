@@ -57,10 +57,10 @@ export class Teacher implements Serializable<Teacher>{
   shortName: string;
 
   deserialize(input) {
-    this.id = input.teacherId;
-    this.name = input.teacherName;
-    this.fullName = input.teacherFullName;
-    this.shortName = input.teacherShortName;
+    this.id = input.teacherId||0;
+    this.name = input.teacherName||"";
+    this.fullName = input.teacherFullName||"";
+    this.shortName = input.teacherShortName||"";
 
     return this;
   }

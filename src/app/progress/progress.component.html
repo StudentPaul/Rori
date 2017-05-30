@@ -1,0 +1,19 @@
+<md-spinner *ngIf="waiting"></md-spinner>
+<div *ngIf="!waiting">
+  <md-card  *ngFor="let discipline of disciplines">
+  <md-card-title>{{discipline.name}}</md-card-title>
+  <md-card-content>
+    <ul>
+      <li *ngFor="let mark of discipline.marks" class="mark-box">
+        <div>{{mark.description}}</div>
+        <div>{{mark.value}}/{{mark.max}}</div>
+        <md-icon *ngIf="mark.isDone" style="color:green">done</md-icon>
+        <md-icon *ngIf="!mark.isDone" style="color:red">close</md-icon>
+      </li>
+    </ul>
+  </md-card-content>
+</md-card>
+</div>
+
+
+

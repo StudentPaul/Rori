@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import {Info, Teacher} from '../../../timetable.classes';
 
 @Component({
@@ -15,11 +15,18 @@ export class LessonComponent implements OnInit {
   @Input() teacher: Teacher;
   @Input() name: string;
 
+  @Output()
+  infoRequested:EventEmitter<Info[]> = new EventEmitter();
+
+
 
   constructor() {
   }
 
   ngOnInit() {
+  }
+  showInfo() {
+    this.infoRequested.emit(this.info);
   }
 
 }

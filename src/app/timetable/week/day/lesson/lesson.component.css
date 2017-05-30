@@ -22,4 +22,10 @@ i {
 .lesson-type {
   font-style: italic;
 }
-
+.info-item {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin: 5px;
+  border-radius: 50%;
+}

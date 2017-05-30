@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Week, json} from "./timetable.classes";
+import {Week, json, Info} from "./timetable.classes";
 import {TimetableHttpService} from "../server-provider/timetable-http.service";
+import {MdDialog, MdDialogConfig, MdDialogRef} from "@angular/material";
 
 
 @Component({
@@ -16,7 +17,7 @@ export class TimetableComponent implements OnInit {
   currentWeek: number;
   currentDay: string;
 
-  constructor( private timetableHttp: TimetableHttpService) {
+  constructor(public dialog: MdDialog, private timetableHttp: TimetableHttpService) {
 
   }
 
@@ -27,11 +28,12 @@ export class TimetableComponent implements OnInit {
   fetchTimetable () {
     return this.timetableHttp.getCurrent().subscribe(
       data =>{
-        this.firstWeek = new Week().deserialize(data.weeks[0]);
-        this.secondWeek = new Week().deserialize(data.weeks[1]);
-        this.currentDay = data.day;
-        this.currentWeek = data.week;
-        return data
+        let obj = JSON.parse(data._body) ;
+        this.firstWeek = new Week().deserialize(obj.weeks[0]);
+        this.secondWeek = new Week().deserialize(obj.weeks[1]);
+        this.currentDay = obj.day;
+        this.currentWeek = obj.week;
+        return obj
       },
       error => {
         this.firstWeek = new Week().deserialize(json.weeks[0]);
@@ -41,5 +43,35 @@ export class TimetableComponent implements OnInit {
         return error;
       });
   }
+  openInfoDialog(info: Info[]){
+
+    let config = new MdDialogConfig();
+    let dialogRef = this.dialog.open(DialogInfo, config);
+    dialogRef.componentInstance.info = info;
+    dialogRef.afterClosed().subscribe(result => {
+      if(result === 'success'){
+
+      }
+    });
+
+  }
+
+}
+
+@Component({
+  selector: 'dialog-info',
+  templateUrl: 'dialog-info.html',
+  styleUrls: ['./dialog-info.css'],
+  providers: []
+})
+export class DialogInfo {
+  constructor(public dialogRef: MdDialogRef<DialogInfo>) {
+
+  }
+  info: Info[];
+
+
+
+
 
 }
