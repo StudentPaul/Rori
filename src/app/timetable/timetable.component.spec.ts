@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TimetableComponent } from './timetable.component';
+import {MaterialModule} from "@angular/material";
 
 describe('TimetableComponent', () => {
   let component: TimetableComponent;
@@ -8,6 +9,7 @@ describe('TimetableComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [ MaterialModule.forRoot() ],
       declarations: [ TimetableComponent ]
     })
     .compileComponents();

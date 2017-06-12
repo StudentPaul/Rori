@@ -4,8 +4,24 @@ ul {
 ul>li {
   display: inline-block;
   margin: 5px;
-  background-color: darkgrey;
   padding: 5px;
   border-radius: 5px;
 }
+md-card {
+  text-align: center;
 
+}
+
+.center {
+  text-align: center;
+}
+.isDone {
+  filter: grayscale(100%);
+  filter: gray;
+
+}
+md-progress-spinner {
+  margin: auto;
+}
+md-card-footer {
+}

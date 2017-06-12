@@ -29,16 +29,18 @@ export class Mark implements Serializable<Mark>{
   description: string;
   value: number;
   max: number;
-  date: Date;
+  date: string;
   discipline: string;
   time: string;
   isDone: boolean;
+  deadline: number;
+  percentage: number;
 
   deserialize(input) {
     this.description = input.description||"";
     this.value = input.value||0;
     this.max = input.max||0;
-    this.date = new Date(input.date);
+    this.date = input.date;
     this.discipline = input.discipline||"";
     this.time = input.time||"";
     this.isDone = input.isDone||false;

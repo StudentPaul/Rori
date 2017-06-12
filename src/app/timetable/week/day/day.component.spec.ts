@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DayComponent } from './day.component';
+import {LessonComponent} from './lesson/lesson.component';
+import {MaterialModule} from "@angular/material";
+
 
 describe('DayComponent', () => {
   let component: DayComponent;
@@ -8,7 +11,8 @@ describe('DayComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DayComponent ]
+      imports: [ MaterialModule.forRoot() ],
+      declarations: [ DayComponent,LessonComponent ]
     })
     .compileComponents();
   }));

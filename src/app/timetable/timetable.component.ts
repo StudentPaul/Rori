@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Week, json, Info} from "./timetable.classes";
-import {TimetableHttpService} from "../server-provider/timetable-http.service";
+import {TimetableHttpService} from "../server-provider/stubs/timetable-http.service";
 import {MdDialog, MdDialogConfig, MdDialogRef} from "@angular/material";
 
 
@@ -22,7 +22,6 @@ export class TimetableComponent implements OnInit {
   }
 
   ngOnInit() {
-
     this.fetchTimetable();
   }
   fetchTimetable () {
@@ -36,10 +35,11 @@ export class TimetableComponent implements OnInit {
         return obj
       },
       error => {
-        this.firstWeek = new Week().deserialize(json.weeks[0]);
-        this.secondWeek = new Week().deserialize(json.weeks[1]);
-        this.currentDay = json.day;
-        this.currentWeek = json.week;
+        // this.firstWeek = new Week().deserialize(json.weeks[0]);
+        // this.secondWeek = new Week().deserialize(json.weeks[1]);
+        // this.currentDay = json.day;
+        // this.currentWeek = json.week;
+        alert(error);
         return error;
       });
   }

@@ -32,7 +32,7 @@ import { ProgressComponent } from './progress/progress.component';
     WeekComponent,
     DayComponent,
     LessonComponent,
-    ProgressComponent
+    ProgressComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,6 +47,7 @@ import { ProgressComponent } from './progress/progress.component';
     DemoUtilsModule
   ],
   exports: [
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent,DialogLogin, DialogInfo]

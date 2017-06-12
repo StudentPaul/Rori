@@ -1,20 +1,23 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CellComponent } from './lesson.component';
+import { LessonComponent } from './lesson.component';
+import {MaterialModule} from "@angular/material";
 
-describe('CellComponent', () => {
-  let component: CellComponent;
-  let fixture: ComponentFixture<CellComponent>;
+
+describe('LessonComponent', () => {
+  let component: LessonComponent;
+  let fixture: ComponentFixture<LessonComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CellComponent ]
+      imports: [ MaterialModule.forRoot() ],
+      declarations: [ LessonComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CellComponent);
+    fixture = TestBed.createComponent(LessonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

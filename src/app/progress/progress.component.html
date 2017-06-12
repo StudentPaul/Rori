@@ -1,18 +1,33 @@
 <md-spinner *ngIf="waiting"></md-spinner>
 <div *ngIf="!waiting">
-  <md-card  *ngFor="let discipline of disciplines">
+  <div class="center" *ngFor="let discipline of disciplines">
   <md-card-title>{{discipline.name}}</md-card-title>
   <md-card-content>
     <ul>
       <li *ngFor="let mark of discipline.marks" class="mark-box">
-        <div>{{mark.description}}</div>
-        <div>{{mark.value}}/{{mark.max}}</div>
-        <md-icon *ngIf="mark.isDone" style="color:green">done</md-icon>
-        <md-icon *ngIf="!mark.isDone" style="color:red">close</md-icon>
+        <md-card [ngClass]="mark.isDone?'isDone':''" >
+          <md-card-title [style.color]="mark.isDone ? '#0067a7' : mark.deadline<0 ? '#bd1e24':mark.deadline<7?'#e97600':'#007256'">{{mark.description}}</md-card-title>
+
+          <md-card-content>
+            <md-progress-spinner
+              [color]="color"
+              [mode]="mode"
+              [value]="100*mark.value/mark.max">
+            </md-progress-spinner>
+            <h4>{{mark.value}}/{{mark.max}}</h4>
+            <div mdTooltip="{{mark.date}}">{{mark.deadline<0?mark.deadline==0?'сьогодні':-mark.deadline+' днів тому':'через '+mark.deadline+' днів'}}</div>
+          </md-card-content>
+
+          <md-card-footer [style.background-color]="mark.isDone ? '#0067a7' : mark.deadline<0 ? '#bd1e24':mark.deadline<7?'#e97600':'#007256'">
+            <md-icon *ngIf="mark.isDone" style="color:white">done</md-icon>
+            <md-icon *ngIf="!mark.isDone" style="color:white">clear</md-icon>
+          </md-card-footer>
+        </md-card>
+
       </li>
     </ul>
   </md-card-content>
-</md-card>
+</div>
 </div>
 
 
