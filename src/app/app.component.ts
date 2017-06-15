@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MdDialog, MdDialogRef} from '@angular/material';
 import {LoginService} from './login.service'
-import {LoginHttpService} from './server-provider/login-http.service'
+import {LoginHttpService} from './server-provider/stubs/login-http.service'
 
 
 
@@ -69,7 +69,7 @@ export class DialogLogin {
         },
         error=> {
           this.waiting = false;
-          this.message = 'Error during logging in. Please, try again.';
+          this.message = error;
         }
       );
   }

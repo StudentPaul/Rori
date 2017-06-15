@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {LoginHttpService} from './server-provider/login-http.service'
+import {LoginHttpService} from './server-provider/stubs/login-http.service'
 
 @Injectable(
 )

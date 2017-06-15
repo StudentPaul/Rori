@@ -1,7 +1,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MaterialModule} from "@angular/material";
 
 import { TimetableComponent } from './timetable.component';
-import {MaterialModule} from "@angular/material";
+
+import { WeekComponent } from './week/week.component';
+import {DayComponent} from './week/day/day.component';
+import {LessonComponent} from './week/day/lesson/lesson.component';
 
 describe('TimetableComponent', () => {
   let component: TimetableComponent;
@@ -9,8 +14,8 @@ describe('TimetableComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ MaterialModule.forRoot() ],
-      declarations: [ TimetableComponent ]
+      imports: [ MaterialModule.forRoot(),BrowserAnimationsModule ],
+      declarations: [ TimetableComponent, DayComponent, WeekComponent, LessonComponent ]
     })
     .compileComponents();
   }));

@@ -7,7 +7,7 @@ import {TimeHttpService} from "../server-provider/stubs/time-http.service";
   selector: 'app-progress',
   templateUrl: './progress.component.html',
   styleUrls: ['./progress.component.css'],
-  providers: [ProgressHttpService, TimeHttpService]
+  providers: [ProgressHttpService, TimeHttpService],
 })
 export class ProgressComponent implements OnInit {
 

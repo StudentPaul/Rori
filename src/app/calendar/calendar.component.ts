@@ -1,4 +1,4 @@
-import { Component,ChangeDetectionStrategy, OnInit,ViewChild, TemplateRef  } from '@angular/core';
+import {Component, ChangeDetectionStrategy, OnInit, ViewChild, TemplateRef, Input} from '@angular/core';
 import {
   startOfDay,
   endOfDay,
@@ -62,10 +62,10 @@ export class CalendarComponent implements OnInit{
         return error;
       });
   }
-  view: string = 'month';
+  @Input() view: string = 'month';
   waiting: boolean = true;
 
-  viewDate: Date = new Date();
+  @Input() viewDate: Date = new Date();
 
   modalData: {
     action: string,
