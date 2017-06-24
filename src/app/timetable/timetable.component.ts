@@ -35,11 +35,7 @@ export class TimetableComponent implements OnInit {
         return obj
       },
       error => {
-        // this.firstWeek = new Week().deserialize(json.weeks[0]);
-        // this.secondWeek = new Week().deserialize(json.weeks[1]);
-        // this.currentDay = json.day;
-        // this.currentWeek = json.week;
-        alert(error);
+
         return error;
       });
   }
@@ -69,9 +65,5 @@ export class DialogInfo {
 
   }
   info: Info[];
-
-
-
-
 
 }

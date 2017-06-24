@@ -1,10 +1,22 @@
-<div>
-  <md-slider thumbLabel min="8" max="36" step="1" [(ngModel)]="fontSize" (change)="changeFontSize()"></md-slider>
-</div>
-<div>
-  <md-select placeholder="State" [(ngModel)]="myState">
-    <md-option *ngFor="let state of states" [value]="state.code" (change)="changeFont()">{{ state.name }}</md-option>
-  </md-select>
-  <button (click)="changeFont()" color="accent" md-raised-button>Apply</button>
-</div>
-  <p> Selected value: {{myState}} </p>
+<md-card class="center">
+  <md-card-title><p>Шрифт</p></md-card-title>
+  <md-card-content>
+    <div>
+      <md-select placeholder="" [(ngModel)]="myState">
+        <md-option *ngFor="let state of states" [value]="state.code" (change)="changeFont()">{{ state.name }}</md-option>
+      </md-select>
+
+    </div>
+    <div><md-slider thumbLabel min="8" max="36" step="1" [(ngModel)]="fontSize" (change)="changeFontSize()"></md-slider></div>
+    <div>
+
+      <button (click)="changeFont()" color="accent" md-raised-button>Застосувати</button>
+    </div>
+
+  </md-card-content>
+  <md-card-footer>
+
+  </md-card-footer>
+
+</md-card>
+

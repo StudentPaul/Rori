@@ -4,14 +4,15 @@
   <div>
     <md-chip-list *ngIf="message"><md-chip color="primary" selected="true">{{message}}</md-chip></md-chip-list>
 
+
   <md-spinner *ngIf="waiting"></md-spinner>
   <md-input-container >
-    <input mdInput type="email" placeholder="Ел. адреса" [(ngModel)]="email">
+    <input mdInput required type="email" placeholder="Ел. адреса" [(ngModel)]="email">
   </md-input-container>
 </div>
 <div>
   <md-input-container>
-    <input mdInput type="password" placeholder="Пароль" [(ngModel)]="password">
+    <input mdInput required minlength="6" maxlength="24" type="password" placeholder="Пароль" [(ngModel)]="password">
   </md-input-container></div>
 </div>
 <div md-dialog-actions align="center">

@@ -35,15 +35,15 @@ export class TimetableHttpService {
                 "number": 1,
                 "info": [
                   {
-                    "content": "Lesson info 1",
+                    "content": "Відбудеться контроль знань на 15 хв.",
                     "color": "#FFFF00"
                   },
                   {
-                    "content": "Lesson info 1",
+                    "content": "Заняття відбудеться в 418 аудиторії",
                     "color": "#FFFF00"
                   },
                   {
-                    "content": "Lesson info 3",
+                    "content": "Старості групи: прохання зв'язатись зі мною",
                     "color": "#008000"
                   }
                   ]
@@ -58,7 +58,7 @@ export class TimetableHttpService {
                 "id": 35,
                 "type": "лек.",
                 "name": "Проектний практикум",
-                "number": 1,
+                "number": 2,
                 "info": []
               },
               {
@@ -71,7 +71,7 @@ export class TimetableHttpService {
                 "id": 30,
                 "type": "лаб.",
                 "name": "Менеджмент проектів програмного забезпечення",
-                "number": 2,
+                "number": 3,
                 "info": [
                   {
                     "content": "Lesson info 2",
@@ -89,7 +89,7 @@ export class TimetableHttpService {
                 "id": 36,
                 "type": "лаб.",
                 "name": "Менеджмент проектів програмного забезпечення",
-                "number": 2,
+                "number": 4,
                 "info": []
               },
               {
@@ -102,7 +102,7 @@ export class TimetableHttpService {
                 "id": 31,
                 "type": "лек.",
                 "name": "Комп'ютеризовані системи управління-2. Інтелектуальні системи управління",
-                "number": 3,
+                "number": 5,
                 "info": [
                   {
                     "content": "Lesson info 4",
@@ -120,7 +120,7 @@ export class TimetableHttpService {
                 "id": 37,
                 "type": "лек.",
                 "name": "Комп'ютеризовані системи управління-2. Інтелектуальні системи управління",
-                "number": 3,
+                "number": 6,
                 "info": []
               }
               ]
@@ -151,7 +151,7 @@ export class TimetableHttpService {
                 "id": 38,
                 "type": "лаб.",
                 "name": "Проектний практикум",
-                "number": 1,
+                "number": 2,
                 "info": []
               }
               ]
@@ -211,7 +211,7 @@ export class TimetableHttpService {
                 "id": 39,
                 "type": "лаб.",
                 "name": "Менеджмент проектів програмного забезпечення",
-                "number": 1,
+                "number": 2,
                 "info": []
               },
               {
@@ -224,7 +224,7 @@ export class TimetableHttpService {
                 "id": 34,
                 "type": "лек.",
                 "name": "Комп'ютеризовані системи управління-2. Інтелектуальні системи управління",
-                "number": 4,
+                "number": 3,
                 "info": []
               },
               {
@@ -237,7 +237,7 @@ export class TimetableHttpService {
                 "id": 40,
                 "type": "лек.",
                 "name": "Комп'ютеризовані системи управління-2. Інтелектуальні системи управління",
-                "number": 4,
+                "number": 3,
                 "info": []
               }
               ]

@@ -1,7 +1,7 @@
 <md-spinner *ngIf="waiting"></md-spinner>
 <div *ngIf="!waiting">
   <div class="center" *ngFor="let discipline of disciplines">
-  <md-card-title>{{discipline.name}}</md-card-title>
+    <md-card-title><div>{{discipline.name}}</div></md-card-title>
   <md-card-content>
     <ul>
       <li *ngFor="let mark of discipline.marks" class="mark-box">

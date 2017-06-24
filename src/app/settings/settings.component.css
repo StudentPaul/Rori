@@ -2,3 +2,6 @@ md-slider {
   max-width: 400px;
   width: 100%;
 }
+.center {
+  text-align: center;
+}

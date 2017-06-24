@@ -16,7 +16,7 @@ import {
   CalendarEventAction,
   CalendarEventTimesChangedEvent
 } from 'angular-calendar';
-import {CalendarHttpService} from '../server-provider/calendar-http.service';
+import {CalendarHttpService} from '../server-provider/stubs/calendar-http.service';
 
 const colors: any = {
   red: {
@@ -41,6 +41,7 @@ const colors: any = {
 })
 export class CalendarComponent implements OnInit{
   @ViewChild('modalContent') modalContent: TemplateRef<any>;
+  constructor(private modal: NgbModal, private calendarHttp: CalendarHttpService) {}
 
   fetchCalendar () {
     return this.calendarHttp.getCurrent().subscribe(
@@ -52,7 +53,6 @@ export class CalendarComponent implements OnInit{
         });
         this.refresh.next();
         this.waiting = false;
-        alert(this.waiting);
 
         return obj
       },
@@ -81,7 +81,7 @@ export class CalendarComponent implements OnInit{
 
   activeDayIsOpen: boolean = true;
 
-  constructor(private modal: NgbModal, private calendarHttp: CalendarHttpService) {}
+
 
   dayClicked({date, events}: {date: Date, events: CalendarEvent[]}): void {
 
