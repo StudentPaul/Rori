@@ -4,7 +4,11 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MaterialModule} from '@angular/material';
-import {MdIconModule} from '@angular/material';
+import {MdIconModule, MdInputModule, MdSelectModule,
+  MdTooltipModule, MdListModule, MdCardModule,
+  MdSidenavModule, MdProgressSpinnerModule, MdDialogModule,
+  MdButtonModule, MdToolbarModule, MdChipsModule,
+  MdSliderModule} from '@angular/material';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing/app-routing.module';
@@ -37,9 +41,12 @@ import { ProgressComponent } from './progress/progress.component';
     FormsModule,
     HttpModule,
     BrowserAnimationsModule,
-    MaterialModule.forRoot(),
     NgbModalModule.forRoot(),
-    MdIconModule,
+    MdIconModule, MdInputModule, MdSelectModule,
+    MdTooltipModule, MdListModule, MdCardModule,
+    MdSidenavModule, MdProgressSpinnerModule, MdDialogModule,
+    MdButtonModule, MdToolbarModule, MdChipsModule,
+    MdSliderModule,
     AppRoutingModule,
     CalendarModule.forRoot(),
     DemoUtilsModule
@@ -48,6 +55,6 @@ import { ProgressComponent } from './progress/progress.component';
     MaterialModule
   ],
   providers: [],
-  bootstrap: [AppComponent,DialogLogin, DialogInfo]
+  bootstrap: [AppComponent, DialogLogin, DialogInfo]
 })
 export class AppModule { }
